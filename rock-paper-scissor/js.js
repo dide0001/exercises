@@ -34,7 +34,6 @@ computerChooses ();
 
 function computerChooses (){
     computerChoice = Math.floor(Math.random () * 3)
-    console.log("computerChooses ", computerChoice)
     if (computerChoice === 0)  {
         computerChoice = "rock"
     } else if (computerChoice === 1) {
@@ -43,6 +42,7 @@ function computerChooses (){
     else {
         computerChoice = "scissors"
     }
+    console.log("computerChooses ", computerChoice)
     handShakesStart();
 
 }
