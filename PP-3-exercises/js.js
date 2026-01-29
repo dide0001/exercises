@@ -3,7 +3,7 @@ let Type = "med"
 let pet = "dig"
 
 
-presentPet (Type, Name, pet)
+presentPet (Name, Type, pet)
 function presentPet(firstName, animalType, animalName){
     console.log(`My name is ${firstName}, I have a ${animalType} called ${animalName}`);
 }
