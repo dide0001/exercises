@@ -1,5 +1,5 @@
-let Price = 20
-let Moms = 1.25
+let Price = 200
+let Moms = 1.33
 
 fullPrice(Price, Moms)
 function fullPrice (){
