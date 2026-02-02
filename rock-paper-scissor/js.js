@@ -1,11 +1,14 @@
-"use strict"
+
+import {computerChoice} from "./utils/utils_lib.js" 
+
 const rock_btn = document.querySelector(".rock")
 const paper_btn = document.querySelector(".paper")
 const scissors_btn = document.querySelector(".scissors")
 const player1 = document.querySelector("#player1")
 const player2 = document.querySelector("#player2")
 let userChoice;
-let computerChoice;
+let comChoice;
+
 
 
 document.addEventListener("DOMContentLoaded", init)
@@ -33,16 +36,17 @@ computerChooses ();
 }
 
 function computerChooses (){
-    computerChoice = Math.floor(Math.random () * 3)
-    if (computerChoice === 0)  {
-        computerChoice = "rock"
-    } else if (computerChoice === 1) {
-        computerChoice = "paper"
+    let n = computerChoice();
+    if (n === 0)  {
+        n = "rock"
+    } else if (n === 1) {
+        n = "paper"
     }
     else {
-        computerChoice = "scissors"
+        n = "scissors"
     }
-    console.log("computerChooses ", computerChoice)
+    comChoice = n;
+    console.log("computerChooses ", n)
     handShakesStart();
 
 }
@@ -57,9 +61,9 @@ function animationEnd(){
     player1.classList.remove("rock", "paper", "scissors")
     player2.classList.remove("rock", "paper", "scissors")
     player1.classList.add(userChoice)
-    player2.classList.add(computerChoice)
+    player2.classList.add(comChoice)
 
-    if (userChoice === computerChoice){
+    if (userChoice === comChoice){
         console.log("uafgjordt!")
         draw.classList.remove("hidden")
         setTimeout(function(){
@@ -67,9 +71,9 @@ function animationEnd(){
         }, 2000)
     }
     else if (
-        (userChoice === "rock" && computerChoice === "scissors" )  ||
-    (userChoice === "paper" && computerChoice === "rock") ||
-    (userChoice === "scissors" && computerChoice === "paper")
+        (userChoice === "rock" && comChoice === "scissors" )  ||
+    (userChoice === "paper" && comChoice === "rock") ||
+    (userChoice === "scissors" && comChoice === "paper")
     ){
         console.log ("Du vinder!")
         win.classList.remove ("hidden")
