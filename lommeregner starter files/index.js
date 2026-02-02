@@ -24,16 +24,44 @@ function klik(evt) {
   if (typeOfInput === "num") {
     // hvis det er et tal, så tjek om det er første eller andet tal der skal gemmes(!) og husk at tallene er strings
     // og det er en fordel her, men ikke nå der skal regnes
+    if (regneArt === ""){
+      firstNumVal += btnClicked;
+    } else {
+      secondNumVal += btnClicked;
+    }
   } else if (typeOfInput === "regneart") {
     // hvis det er en regneart, så gem den
+    regneArt = btnClicked;
   } else if (typeOfInput === "ligmed") {
     // hvis det er ligmed, så regn regnestykket ud med de gemte værdier
     // ligesom i den simple lommeregner.  Der skal parseInt() på strings til tal
     // skriv resultatet til skærmen med updateScreen()
+    const num1 = parseInt(firstNumVal)
+    const num2 =parseInt(secondNumVal)
+    let result;
+
+    if(regneArt === "+"){
+      result = num1 + num2;
+    } else if (regneArt === "-"){
+      result = num1 - num2;
+    } else if (regneArt === "/"){
+      result = num1 / num2;
+    } else if (regneArt === "*"){
+      result = num1 * num2;
+    }
+
+    displayContent=result.toString();
+    display.value= displayContent;
+    // firstNumVal=result.toString();
+    // secondNumVal= "";
+    // regneArt="";
   } else if (typeOfInput === "CLEAR") {
     // reset alt: lav en reset funktion der nulstiller alle variabler
     // skærmen bliver nulstillet med resetScreen()
     resetScreen();
+    firstNumVal="";
+    secondNumVal="";
+    regneArt="";
   }
 }
 
