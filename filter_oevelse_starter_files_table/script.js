@@ -37,10 +37,7 @@ showBtnRugbrod.addEventListener("click", ()=>{
 showRugbrod(vehicles)})
 
 function fmt(value) {
-  if (value == null) return "";              
-  if (Array.isArray(value)) return value.join(", ");
-  if (value === true) return "Ja";
-  if (value === false) return "";            
+  if (value == null) return "-";                      
   return value;                               
 }
 function showTheseVehicles(arr) {
