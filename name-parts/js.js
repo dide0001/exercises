@@ -18,3 +18,10 @@ console.log(lastName)
 // console.log(`Personens mellemnavn navn er ${middleName}`)
 // console.log(`Personens efternavn navn er ${lastName}`)
 // console.log(`Personens fulde navn er ${fullName}`)
+
+
+const text = "hej";
+
+const stars = "*".repeat(text.length);
+
+console.log(stars);

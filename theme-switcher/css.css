@@ -1,0 +1,93 @@
+/* reset + base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* layout */
+  header,
+  main,
+  footer {
+    padding: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* dropdown */
+  select {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+  }
+  
+  /* ---------- THEMES ---------- */
+  
+  /* DARK */
+  body[data-theme="dark"] header {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  body[data-theme="dark"] main {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  body[data-theme="dark"] footer {
+    background-color: #111;
+    color: #fff;
+  }
+  
+  /* LIGHT */
+  body[data-theme="light"] header {
+    background-color: #f4f4f4;
+    color: #222;
+  }
+  
+  body[data-theme="light"] main {
+    background-color: #ffffff;
+    color: #222;
+  }
+  
+  body[data-theme="light"] footer {
+    background-color: #eaeaea;
+    color: #222;
+  }
+  
+  /* HAWAII */
+  body[data-theme="hawaii"] header {
+    background-color: #ff6f61;
+    color: #fff;
+  }
+  
+  body[data-theme="hawaii"] main {
+    background-color: #ffe4e1;
+    color: #222;
+  }
+  
+  body[data-theme="hawaii"] footer {
+    background-color: #7fffd4;
+    color: #222;
+  }
