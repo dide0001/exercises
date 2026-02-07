@@ -45,49 +45,66 @@
   /* ---------- THEMES ---------- */
   
   /* DARK */
+  body[data-theme="dark"] {
+    --header-bg-col: #222;
+    --main-bg-col: #444;
+    --footer-bg-col: #333;
+    --text-col: #fff;
+  }
   body[data-theme="dark"] header {
-    background-color: #222;
+    background-color: var(--header-bg-col);
     color: #fff;
   }
   
   body[data-theme="dark"] main {
-    background-color: #444;
+    background-color: var(--main-bg-col);
     color: #fff;
   }
   
   body[data-theme="dark"] footer {
-    background-color: #111;
+    background-color: var(--footer-bg-col);
     color: #fff;
   }
   
   /* LIGHT */
+  body[data-theme="light"] {
+    --header-bg-col: #f4f4f4;
+    --main-bg-col: #ffffff;
+    --footer-bg-col: #eaeaea;
+  }
   body[data-theme="light"] header {
-    background-color: #f4f4f4;
+    background-color: var(--header-bg-col);
     color: #222;
   }
   
   body[data-theme="light"] main {
-    background-color: #ffffff;
+    background-color: var(--main-bg-col);
     color: #222;
   }
   
   body[data-theme="light"] footer {
-    background-color: #eaeaea;
+    background-color: var(--footer-bg-col);
     color: #222;
   }
   
   /* HAWAII */
+
+  body[data-theme="hawaii"] {
+    --header-bg-col: hotpink;
+    --main-bg-col: lightcyan;
+    --footer-bg-col: #7fffd4;
+  }
   body[data-theme="hawaii"] header {
-    background-color: #ff6f61;
+    background-color: var(--header-bg-col);
     color: #fff;
   }
   
   body[data-theme="hawaii"] main {
-    background-color: #ffe4e1;
+    background-color: var(--main-bg-col);
     color: #222;
   }
   
   body[data-theme="hawaii"] footer {
-    background-color: #7fffd4;
+    background-color: var(--footer-bg-col);
     color: #222;
   }
