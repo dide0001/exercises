@@ -1,0 +1,103 @@
+:root{
+  --bg: #0f0f12;
+  --panel: #141414;
+  --primary: #e50914;
+  --text: #ffffff;
+  --muted: #b3b3b3;
+  --radius: 999px;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  background: radial-gradient(1200px 600px at 50% -10%, #1b1b1b 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+#nextBtn{
+  position: relative;
+  width: 280px;
+  height: 56px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #ff0f1a 0%, var(--primary) 70%);
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: .2px;
+  cursor: pointer;
+  box-shadow:
+    0 10px 30px rgba(229, 9, 20, .35),
+    inset 0 -2px 0 rgba(0,0,0,.25);
+  overflow: hidden;
+}
+
+#nextBtn span:first-child{
+  position: relative;
+  z-index: 2;
+  text-transform: lowercase;
+}
+
+#nextBtn:hover{
+  filter: brightness(1.05);
+}
+
+#nextBtn:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 6px 18px rgba(229, 9, 20, .35),
+    inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+#animationBar{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 6px;
+  width: 0;
+  background: rgba(255,255,255,.9);
+  z-index: 1;
+}
+
+#animationBar.startAnimation{
+  animation: animateBar 5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animateBar{
+  from{ width: 0; }
+  to{ width: 100%; }
+}
+
+#status{
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+  min-height: 1em;
+  text-align: center;
+}
+
+#reset{
+  margin-top: 16px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+#reset:hover{
+  color: var(--text);
+  border-color: rgba(255,255,255,.4);
+}
